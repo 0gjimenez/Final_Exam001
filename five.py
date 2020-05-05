@@ -9,14 +9,10 @@
     NOTE: 0 points if when you run the code again, the password is similar.
           Every time you run the code you should get a unique string. 
 """
+import string
 import random
 
-def passwordGenerator(personal_list):
-    password = n00b1234
-    return password
+def pw_gen(size = 8, chars=string.ascii_letters + string.digits + string.punctuation):
+	return ''.join(random.choice(chars) for _ in range(size))
 
-
-
-if __name__ == "__main__":
-    mylist = [12,"BOB",-2,"Amy",["David","Jona","Timmothy"],"Burt"]
-    print(passwordGenerator(mylist))
+print(pw_gen(int(input('How many characters in your password?'))))
