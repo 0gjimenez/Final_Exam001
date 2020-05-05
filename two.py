@@ -6,10 +6,9 @@
 
 
 def performCalculations(value):
-    result = value
+    result = f3(f1((f2(f2(f2(f2(value, value),value),value),value)), value), f2(f2(f1(value, f3(f2(f2(f1(value, value), f1(value, value)), f1(value, value)),value)), value), value))
     return result
-
-
+ 
 def f1(v1, v2):
     return v1 // v2
 
@@ -47,6 +46,3 @@ if __name__ == "__main__":
     print(tester(-40, -85))
     print(tester(-2, -9))
     print(tester(15, 26))
-    #f2(f4(value), f3(f2(f2(f1(value, value), f1(value, value)), f1(value, value)),value))
-    #f3(value, f3(f2(f2(f1(value, value), f1(value, value)), f1(value, value)),value))
-    #= if(value > 0):
