@@ -16,44 +16,74 @@
 """
 
 
-def performCalculations(value):
-    result = f3(f1((f2(f2(f2(f2(value, value),value),value),value)), value), f2(f2(f1(value, f3(f2(f2(f1(value, value), f1(value, value)), f1(value, value)),value)), value), value))
-    return result
- 
-def f1(v1, v2):
-    return v1 // v2
+def questionOne():
+    inputF = open("four.txt", 'r')
+    outputF = open("solution4.txt", 'w')
+
+    for line in inputF:
+        outputString = ""
+        for i in line:
+            if i.isupper():
+                outputString = outputString + i
+            else:
+                pass
+        outputF.write(outputString)
+
+    inputF.close()
+    outputF.close()
 
 
-def f2(v3, v4):
-    return v4 + v3
+def questionTwo():
+    inputF = open("four.txt", 'r')
 
+    numbers = '0123456789'
 
-def f3(v1, v2):
-    return v2 - v1
+    finalNum3 = 0
 
+    for fileLines in inputF:
+        for text in fileLines:
+            if text in numbers:
+                # print(i)
+                finalNum3 = finalNum3 + int(text)
+    outputString = ""
 
-def f4(v):
-    return v * v
+    with open("four.txt") as fp:
+        for i, line in enumerate(fp):
+            if i >= 10:
 
+                for aLine in line:
+                    outputString = outputString + aLine.replace("|", " ")
+                break
 
-def f5(v1, v2):
-    return v1 / v2
+    counter = 0
 
+    if "|" not in outputString:
+        for i in outputString:
+            counter = counter + 1
+            if counter >= finalNum3:
+                print("test")
+                print(i)
+                break
 
-def tester(input, output):
-    actual_result = performCalculations(input)
-    expected_result = output
-    print_text = "In: " + str(input) + " | "
-    if expected_result == actual_result:
-        print_text += "Correct: " + str(expected_result) + " == " + str(actual_result)
-    else:
-        print_text += "Incorrect: " + str(expected_result) + " != " + str(actual_result)
-    return print_text
+    inputF.close()
+    
+    
+def part3():
+    message = ""
+    with open ('four.txt') as fin:
+       for line in fin:
+          for achar in line:
+             if achar.isupper():
+                message += achar
+    return message
 
 
 if __name__ == "__main__":
-    print(tester(350, 696))
-    print(tester(37, 70))
-    print(tester(-40, -85))
-    print(tester(-2, -9))
-    print(tester(15, 26))
+    # questionOne()
+   
+    # questionTwo()
+    
+    print(part3())
+
+if __name__ == "__main__":
+    fun()
