@@ -10,11 +10,21 @@ def tell_story():
     b = Dragon()
     c = Gorilla()
     # Generate  as many other objects as you want
-
-
-
+    d = Beetle() 
+    e = Chipmunk() 
+    f = Snake() 
+    g = Cobra() 
+    h = Goat() 
+    i = Sheep() 
+    j = Donkey() 
+    k = Pig()
 
     # Have objects interact
+    
+    e.eat(g)
+    b.eat(d)
+    b.eat(h)
+    j.eat(b)
 
 
     # replace the replace_me_object
