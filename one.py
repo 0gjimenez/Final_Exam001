@@ -7,24 +7,25 @@
 """
 
 
-def reverse(text): 
-  return text[::-1]
+def reverse(text):
+    return text[::-1]
 
-def remove(text): 
-  return text.replace(" ", "") 
+def remove(text):
+    return text.replace(" ", "")
 
 def lower(text):
-  return text.lower()
+    return text.lower()
 
 def checkisPallendrome(text):
     undercase = lower(text)
     result = remove(undercase)
     backwards = reverse(result)
     if (result == backwards):
-      x = True
-    else: 
-      x = False
+        x = True
+    else:
+        x = False
     return x
+
 
 def tester(text, expected_result):
     actual_result = checkisPallendrome(text)
@@ -44,10 +45,12 @@ if __name__ == "__main__":
     text2 = "She sells sea shells by the sea shore"
     text3 = "race car"
     text4 = "My school"
-
+    
+    
+    
     # Test it like this
     print(tester(text0, False))
     print(tester(text1, True))
-    print(tester(text2, True))
+    print(tester(text2, False))
     print(tester(text3, True))
     print(tester(text4, False))
